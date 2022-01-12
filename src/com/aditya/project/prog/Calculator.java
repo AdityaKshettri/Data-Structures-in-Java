@@ -59,6 +59,14 @@ public class Calculator {
         int j = 42;
         System.out.println("j = " + j);
         System.out.println("Number of digits in factorial = " + digitsInFactorial(j));
+
+        long k = 9223372036854775807L;
+        long l = 9223372036854775807L;
+        long m = 1000000007;
+        System.out.println("k = " + k);
+        System.out.println("l = " + l);
+        System.out.println("modulo m = " + m);
+        System.out.println("Sum under modulo : " + sumUnderModulo(k, l, m));
     }
 
     // O(log(min(a,b))
