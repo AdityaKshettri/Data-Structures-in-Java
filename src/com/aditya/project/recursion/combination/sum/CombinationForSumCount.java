@@ -13,15 +13,15 @@ public class CombinationForSumCount {
         Arrays.stream(arr).forEach(value -> System.out.print(value + "\t"));
         System.out.println();
         System.out.println("sum : " + sum);
-        System.out.println("No. of subsets with given sum : " + countSubsetsWithSum(arr, n, sum));
+        System.out.println("No. of subsets with given sum : " + countSubsetsWithSum(0, arr, sum));
     }
 
     // Count Subset SUM problem
     // O(2^n)
-    private static int countSubsetsWithSum(int[] a, int n, int sum) {
-        if (n == 0) {
+    private static int countSubsetsWithSum(int i, int[] a, int sum) {
+        if (i == a.length) {
             return (sum == 0) ? 1 : 0;
         }
-        return countSubsetsWithSum(a, n - 1, sum) + countSubsetsWithSum(a, n - 1, sum - a[n - 1]);
+        return countSubsetsWithSum(i + 1, a, sum) + countSubsetsWithSum(i + 1, a, sum - a[i]);
     }
 }
