@@ -8,7 +8,7 @@ public class CombinationForSumWithRepetition {
 
     public static void main(String[] args) {
         int n = 4;
-        int[] arr = new int[]{2, 3, 5, 7};
+        int[] arr = new int[]{1, 3, 5, 7};
         int sum = 7;
         System.out.println("n : " + n);
         System.out.print("Array : ");

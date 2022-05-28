@@ -1,11 +1,12 @@
 package com.aditya.project.linkedlist;
 
-public class FindMiddleNode {
+public class _Reverse {
 
     public static void main(String[] args) {
         Node root = initializeLinkedList();
         print(root);
-        System.out.println("Middle node : " + findMiddleNode(root).data);
+        root = reverse(root);
+        print(root);
     }
 
     private static Node initializeLinkedList() {
@@ -18,15 +19,16 @@ public class FindMiddleNode {
         return root;
     }
 
-    // Tortoise Method
     // TC : O(N)
-    private static Node findMiddleNode(Node head) {
-        Node fast = head;
-        while (fast != null && fast.next != null) {
-            head = head.next;
-            fast = fast.next.next;
+    private static Node reverse(Node head) {
+        Node newHead = null;
+        while (head != null) {
+            Node next = head.next;
+            head.next = newHead;
+            newHead = head;
+            head = next;
         }
-        return head;
+        return newHead;
     }
 
     private static void print(Node head) {

@@ -4,22 +4,22 @@ import java.util.Stack;
 
 // TC : O(N)
 // SC : O(N)
-public class NextGreaterElement {
+public class PrevGreaterElement {
 
     public static void main(String[] args) {
         int[] a = {4, 12, 5, 3, 1, 2, 5, 3, 1, 2, 4, 6};
         System.out.println("Array :");
         print(a);
-        a = calculateNextGreaterElement(a);
+        a = calculatePrevGreaterElement(a);
         System.out.println("Next Greater Element :");
         print(a);
     }
 
-    private static int[] calculateNextGreaterElement(int[] a) {
+    private static int[] calculatePrevGreaterElement(int[] a) {
         int n = a.length;
         int[] nge = new int[n];
         Stack<Integer> stack = new Stack<>();
-        for (int i = n - 1; i >= 0; i--) {
+        for (int i = 0; i < n; i++) {
             while (!stack.isEmpty() && stack.peek() <= a[i]) {
                 stack.pop();
             }
