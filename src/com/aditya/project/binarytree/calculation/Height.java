@@ -1,8 +1,10 @@
-package com.aditya.project.binarytree;
+package com.aditya.project.binarytree.calculation;
+
+import com.aditya.project.binarytree.Node;
 
 import static com.aditya.project.binarytree.Node.initializeBinaryTree;
 
-public class HeightOfBinaryTree {
+public class Height {
 
     public static void main(String[] args) {
         Node root = initializeBinaryTree();
@@ -16,8 +18,8 @@ public class HeightOfBinaryTree {
         if (node == null) {
             return 0;
         }
-        int left = findHeightOfBinaryTree(node.left);
-        int right = findHeightOfBinaryTree(node.right);
-        return 1 + Math.max(left, right);
+        int leftHeight = findHeightOfBinaryTree(node.left);
+        int rightHeight = findHeightOfBinaryTree(node.right);
+        return 1 + Math.max(leftHeight, rightHeight);
     }
 }

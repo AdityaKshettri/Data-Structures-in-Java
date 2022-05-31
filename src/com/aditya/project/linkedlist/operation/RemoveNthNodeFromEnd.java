@@ -1,4 +1,9 @@
-package com.aditya.project.linkedlist;
+package com.aditya.project.linkedlist.operation;
+
+import com.aditya.project.linkedlist.Node;
+
+import static com.aditya.project.linkedlist.Node.initializeLinkedList;
+import static com.aditya.project.linkedlist.Node.print;
 
 public class RemoveNthNodeFromEnd {
 
@@ -11,17 +16,8 @@ public class RemoveNthNodeFromEnd {
         print(head);
     }
 
-    private static Node initializeLinkedList() {
-        Node root = new Node(1);
-        Node head = root;
-        for (int i = 2; i <= 5; i++) {
-            head.next = new Node(i);
-            head = head.next;
-        }
-        return root;
-    }
-
     // TC : O(N)
+    // SC : O(1)
     private static Node removeNthNodeFromEnd(Node head, int n) {
         Node start = new Node();
         start.next = head;
@@ -36,13 +32,5 @@ public class RemoveNthNodeFromEnd {
         }
         slow.next = slow.next.next;
         return head;
-    }
-
-    private static void print(Node head) {
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next;
-        }
-        System.out.println();
     }
 }

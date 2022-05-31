@@ -2,7 +2,7 @@ package com.aditya.project.dp;
 
 // Time Complexity : O(NlogN)
 // Space Complexity : 0(N)
-public class LongestIncreasingSubsequence {
+public class _LongestIncreasingSubsequence {
 
     public static void main(String[] args) {
         int[] a = {10, 9, 2, 5, 3, 7, 101, 18};

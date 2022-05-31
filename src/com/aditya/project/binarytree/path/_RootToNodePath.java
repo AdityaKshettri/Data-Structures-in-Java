@@ -1,4 +1,6 @@
-package com.aditya.project.binarytree;
+package com.aditya.project.binarytree.path;
+
+import com.aditya.project.binarytree.Node;
 
 import java.util.ArrayList;
 import java.util.List;
