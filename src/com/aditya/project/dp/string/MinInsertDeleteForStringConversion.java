@@ -11,6 +11,6 @@ public class MinInsertDeleteForStringConversion {
         int m = b.length();
         int longestCommonSubsequence = funcSpaceOptimization(a, b);
         int minInsertDelete = n + m - 2 * longestCommonSubsequence;
-        System.out.println("Min Inert/Delete to convert a to b : " + minInsertDelete);
+        System.out.println("Min Insert/Delete to convert a to b : " + minInsertDelete);
     }
 }

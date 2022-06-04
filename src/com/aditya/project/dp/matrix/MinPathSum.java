@@ -13,7 +13,7 @@ public class MinPathSum {
             Arrays.fill(i, -1);
         }
         System.out.println("Min Path Sum in Grid : (Recursion) = " + funcRecursion(n - 1, m - 1, a));
-        System.out.println("Min Path Sum in Grid : (Recursion) = " + funcMemoization(n - 1, m - 1, a, dp));
+        System.out.println("Min Path Sum in Grid : (Memoization) = " + funcMemoization(n - 1, m - 1, a, dp));
         System.out.println("Min Path Sum in Grid : (Tabulation) = " + funcTabulation(n, m, a));
         System.out.println("Min Path Sum in Grid : (Space Optimization) = " + funcSpaceOptimization(n, m, a));
     }
