@@ -30,8 +30,9 @@ public class _QuickSort {
                 swap(a, i, j);
             }
         }
-        swap(a, i + 1, r);
-        return i + 1;
+        i++;
+        swap(a, i, r);
+        return i;
     }
 
     private static void swap(int[] a, int i, int j) {

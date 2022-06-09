@@ -2,19 +2,6 @@ package com.aditya.project.greedy;
 
 import java.util.Arrays;
 
-class Job {
-
-    int id;
-    int deadline;
-    int profit;
-
-    Job(int id, int deadline, int profit) {
-        this.id = id;
-        this.deadline = deadline;
-        this.profit = profit;
-    }
-}
-
 public class JobSequencingProblem {
 
     public static void main(String[] args) {
@@ -48,5 +35,18 @@ public class JobSequencingProblem {
         }
         System.out.println("No. of jobs done : " + c);
         System.out.println("Max profit : " + profit);
+    }
+
+    private static class Job {
+
+        int id;
+        int deadline;
+        int profit;
+
+        Job(int id, int deadline, int profit) {
+            this.id = id;
+            this.deadline = deadline;
+            this.profit = profit;
+        }
     }
 }

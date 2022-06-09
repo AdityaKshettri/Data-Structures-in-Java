@@ -19,8 +19,7 @@ public class Palindrome {
             return true;
         }
         Node mid = findMiddleNode(head);
-        mid.next = reverse(mid.next);
-        Node temp = mid.next;
+        Node temp = reverse(mid.next);
         while (temp != null) {
             if (head.data != temp.data) {
                 return false;

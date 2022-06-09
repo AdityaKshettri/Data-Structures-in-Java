@@ -3,43 +3,43 @@ package com.aditya.project.recursion.permutation;
 import java.util.ArrayList;
 import java.util.List;
 
-//Time Complexity: O( N2 )
-//Space Complexity: O( N2 )
 public class NQueenProblem {
 
     public static void main(String[] args) {
         int n = 4;
         System.out.println("n : " + n);
-        char[][] board = new char[n][n];
+        char[][] a = new char[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                board[i][j] = '.';
+                a[i][j] = '.';
             }
         }
-        boolean[] leftRow = new boolean[n];
-        boolean[] lowerDiagonal = new boolean[2 * n - 1];
-        boolean[] upperDiagonal = new boolean[2 * n - 1];
+        boolean[] lr = new boolean[n];
+        boolean[] ld = new boolean[2 * n - 1];
+        boolean[] ud = new boolean[2 * n - 1];
         List<List<String>> res = new ArrayList<>();
-        solveNQueenProblem(0, board, leftRow, lowerDiagonal, upperDiagonal, res);
+        func(0, a, lr, ld, ud, res);
         System.out.println(res);
     }
 
-    private static void solveNQueenProblem(int col, char[][] board, boolean[] leftRow, boolean[] lowerDiagonal, boolean[] upperDiagonal, List<List<String>> res) {
-        if (col == board.length) {
-            res.add(construct(board));
+    // TC: O(N^2)
+    // SC: O(N)
+    private static void func(int col, char[][] a, boolean[] lr, boolean[] ld, boolean[] ud, List<List<String>> res) {
+        if (col == a.length) {
+            res.add(construct(a));
             return;
         }
-        for (int row = 0; row < board.length; row++) {
-            if (!leftRow[row] && !lowerDiagonal[row + col] && !upperDiagonal[board.length - 1 + col - row]) {
-                board[row][col] = 'Q';
-                leftRow[row] = true;
-                lowerDiagonal[row + col] = true;
-                upperDiagonal[board.length - 1 + col - row] = true;
-                solveNQueenProblem(col + 1, board, leftRow, lowerDiagonal, upperDiagonal, res);
-                board[row][col] = '.';
-                leftRow[row] = false;
-                lowerDiagonal[row + col] = false;
-                upperDiagonal[board.length - 1 + col - row] = false;
+        for (int row = 0; row < a.length; row++) {
+            if (!lr[row] && !ld[row + col] && !ud[a.length - 1 + col - row]) {
+                a[row][col] = 'Q';
+                lr[row] = true;
+                ld[row + col] = true;
+                ud[a.length - 1 + col - row] = true;
+                func(col + 1, a, lr, ld, ud, res);
+                a[row][col] = '.';
+                lr[row] = false;
+                ld[row + col] = false;
+                ud[a.length - 1 + col - row] = false;
             }
         }
     }

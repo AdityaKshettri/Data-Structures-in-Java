@@ -24,7 +24,7 @@ public class StartingPointOfCycle {
         Node fast = head;
         Node slow = head;
         Node start = head;
-        while (fast.next != null && fast.next.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {

@@ -2,6 +2,8 @@ package com.aditya.project.linkedlist.operation;
 
 import com.aditya.project.linkedlist.Node;
 
+import java.util.Objects;
+
 import static com.aditya.project.linkedlist.Node.initializeLinkedList;
 import static com.aditya.project.linkedlist.Node.print;
 
@@ -30,7 +32,7 @@ public class RemoveNthNodeFromEnd {
             slow = slow.next;
             fast = fast.next;
         }
-        slow.next = slow.next.next;
+        slow.next = Objects.requireNonNull(slow.next).next;
         return head;
     }
 }

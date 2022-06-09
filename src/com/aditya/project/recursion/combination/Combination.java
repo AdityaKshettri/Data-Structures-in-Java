@@ -9,38 +9,44 @@ public class Combination {
     public static void main(String[] args) {
         int n = 3;
         int[] a = new int[]{3, 1, 2};
-        System.out.println("n : " + n);
         System.out.print("Array : ");
         Arrays.stream(a).forEach(value -> System.out.print(value + "\t"));
         System.out.println();
-        System.out.println("Array Subsets :");
-        printAllCombinations(0, new ArrayList<>(), a);
-        System.out.println("Array Subsets In Reverse:");
-        printAllCombinationsInReverse(0, new ArrayList<>(), a);
+        List<List<Integer>> res = new ArrayList<>();
+        System.out.println("Power Set :");
+        func(0, n, a, new ArrayList<>(), res);
+        System.out.println(res);
+        res = new ArrayList<>();
+        System.out.println("Power Set In Reverse:");
+        funcReverse(0, n, a, new ArrayList<>(), res);
+        System.out.println(res);
     }
 
-    // Subsequence Problem
-    // O(n) Aux Space
-    // O(2^n)
-    private static void printAllCombinations(int i, List<Integer> curr, int[] a) {
-        if (i >= a.length) {
-            System.out.println(curr);
+    // Power Set
+    // TC : O(2^N)
+    // SC : O(N)
+    private static void func(int i, int n, int[] a, List<Integer> curr, List<List<Integer>> res) {
+        if (i == n) {
+            res.add(new ArrayList<>(curr));
             return;
         }
         curr.add(a[i]);
-        printAllCombinations(i + 1, curr, a);
+        func(i + 1, n, a, curr, res);
         curr.remove(curr.size() - 1);
-        printAllCombinations(i + 1, curr, a);
+        func(i + 1, n, a, curr, res);
     }
 
-    private static void printAllCombinationsInReverse(int i, List<Integer> curr, int[] a) {
-        if (i >= a.length) {
-            System.out.println(curr);
+    // Power Set Reverse
+    // TC : O(2^N)
+    // SC : O(N)
+    private static void funcReverse(int i, int n, int[] a, List<Integer> curr, List<List<Integer>> res) {
+        if (i == n) {
+            res.add(new ArrayList<>(curr));
             return;
         }
-        printAllCombinationsInReverse(i + 1, curr, a);
+        funcReverse(i + 1, n, a, curr, res);
         curr.add(a[i]);
-        printAllCombinationsInReverse(i + 1, curr, a);
+        funcReverse(i + 1, n, a, curr, res);
         curr.remove(curr.size() - 1);
     }
 }

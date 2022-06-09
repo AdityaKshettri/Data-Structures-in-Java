@@ -9,7 +9,9 @@ public class LargestRectangleInHistogram {
         System.out.println("Largest area of rectangle the histogram : " + calculateLargestRectangle(a));
     }
 
-    static int calculateLargestRectangle(int[] a) {
+    // TC : O(N)
+    // SC : O(N)
+    public static int calculateLargestRectangle(int[] a) {
         int n = a.length;
 
         Stack<Integer> stack = new Stack<>();
